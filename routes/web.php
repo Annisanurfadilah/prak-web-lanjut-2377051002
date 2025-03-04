@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/profile', [ProfileController::class, 'profile']);
+
 Route::get('/profile/{nama}/{kelas}/{npm}', [ProfileController::class, 'profile']);
+
+Route::get('user/create', [UserController::class, 'create'])->name('create_user');
+
+Route::post('user/store', [UserController::class, 'store'])->name('user.store');
