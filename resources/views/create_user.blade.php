@@ -16,17 +16,32 @@
 
             <div>
                 <label for="nama" class="block font-medium text-gray-700">Nama :</label>
-                <input type="text" id="nama" name="nama" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" required>
+                <input type="text" id="nama" name="nama" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" >
+                @foreach ($errors->get('nama') as $msg)
+
+                    <p class="text-red-500 text-sm mt-1">{{ $msg}}</p>
+                    
+                    @endforeach
             </div>
 
             <div>
                 <label for="npm" class="block font-medium text-gray-700">NPM :</label>
-                <input type="text" id="npm" name="npm" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" required>
+                <input type="text" id="npm" name="npm" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" >
+                @foreach ($errors->get('npm') as $msg)
+
+                    <p class="text-red-500 text-sm mt-1">{{ $msg}}</p>
+                    
+                    @endforeach
             </div>
 
             <div>
                 <label for="kelas" class="block font-medium text-gray-700">Kelas :</label>
-                <input type="text" id="kelas" name="kelas" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" required>
+                <!-- <input type="text" id="kelas" name="kelas" class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition duration-200" required> -->
+                <select name="kelas_id" id="kelas_id" required>
+                    @foreach($kelas as $kelasItem)
+                    <option value="{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="w-full bg-pink-500 text-white font-semibold py-2 rounded-lg hover:bg-pink-600 transition duration-200">Submit</button>

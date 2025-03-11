@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id();
-            $table->integer('mahasiswa_id')->unique();
-            $table->foreign('mahasiswa_id')->references('id')->non('mahasiswa')->onDalate('cascode');
-            $table->timestamps(); 
+            $table->string('nama');
+            $table->string('npm');
+            $table->foreignId('kelas_id')->constrained();
+            $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::dropIfExists('user');
     }
 };
