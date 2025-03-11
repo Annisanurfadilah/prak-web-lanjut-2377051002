@@ -19,7 +19,7 @@
         </div>
         <div class="space-y-5 text-left px-6 py-3">
             <div class="bg-gray-200 py-3 px-4 rounded-md font-semibold">Nama : <?= $nama ?></div>
-            <div class="bg-gray-200 py-3 px-4 rounded-md font-semibold">Kelas : <?= $kelas ?></div>
+            <div class="bg-gray-200 py-3 px-4 rounded-md font-semibold">Kelas : <?= $nama_kelas ?></div>
             <div class="bg-gray-200 py-3 px-4 rounded-md font-semibold">NPM : <?= $npm ?></div>
         </div>
         
