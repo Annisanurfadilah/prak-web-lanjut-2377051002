@@ -18,6 +18,7 @@ class KelasSeeder extends Seeder
             'B',
             'C',
             'D',
+            'D3',
         ];
 
         foreach ($data as $kelas){
